@@ -6,24 +6,16 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
+  overflow-x: hidden;
+  width: 100%;
 }
 
-.block-line-wrapper {
+/* .block-line-wrapper {
   position: relative;
   width: max-content;
   display: block;
@@ -43,4 +35,4 @@ body {
   pointer-events: none;
   will-change: transform;
   z-index: 1;
-}
+} */
