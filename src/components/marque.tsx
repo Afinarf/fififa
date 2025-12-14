@@ -1,21 +1,23 @@
 'use client'
 import { SquareRoundedPlus } from "./icons/outline";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger); // Register plugin once at the module level
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Marque() {
+    const [iconSize, setIconSize] = useState('h-6 w-6');
+    
     const marqueList = [
-        { name: '/ Time Savings', icon: <SquareRoundedPlus strokeWidth={2} className="h-6 w-6" />},
-        { name: '/ Cost Savings', icon: <SquareRoundedPlus strokeWidth={2} className="h-6 w-6" />},
-        { name: '/ Experienced', icon: <SquareRoundedPlus strokeWidth={2} className="h-6 w-6" />},
-        { name: '/ Efficient', icon: <SquareRoundedPlus strokeWidth={2} className="h-6 w-6" />},
-        { name: '/ Fast', icon: <SquareRoundedPlus strokeWidth={2} className="h-6 w-6" />},
-        { name: '/ Flawless', icon: <SquareRoundedPlus strokeWidth={2} className="h-6 w-6" />},
-        { name: '/ Reliable', icon: <SquareRoundedPlus strokeWidth={2} className="h-6 w-6" />},
-        { name: '/ Seamless', icon: <SquareRoundedPlus strokeWidth={2} className="h-6 w-6" />}
+        { name: '/ Time Savings', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Cost Savings', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Experienced', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Efficient', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Fast', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Flawless', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Reliable', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Seamless', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />}
     ];
 
     const marqueeContainer = useRef<HTMLDivElement>(null);
@@ -24,10 +26,29 @@ export default function Marque() {
     const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
+        const updateIconSize = () => {
+            if (window.innerWidth < 640) {
+                setIconSize('h-4 w-4');
+            } else if (window.innerWidth < 768) {
+                setIconSize('h-5 w-5');
+            } else {
+                setIconSize('h-6 w-6');
+            }
+        };
+
+        updateIconSize();
+        window.addEventListener('resize', updateIconSize);
+
+        const getDuration = () => {
+            if (window.innerWidth < 640) return 20;
+            if (window.innerWidth < 1024) return 22;
+            return 25;
+        };
+
         marqueeTween.current = gsap.to(marqueeContainer.current, {
             xPercent: -100,
             ease: "none",
-            duration: 25,
+            duration: getDuration(),
             repeat: -1,
         });
  
@@ -58,20 +79,21 @@ export default function Marque() {
             st.kill();
             marqueeTween.current?.kill();
             if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+            window.removeEventListener('resize', updateIconSize);
         };
     }, []);
 
     return (
-        <div ref={wrapper} className="text-black overflow-hidden border-t border-b border-black py-4 text-center">
-            <div ref={marqueeContainer} className="text-3xl flex whitespace-nowrap">
+        <div ref={wrapper} className="text-black overflow-hidden border-t border-b border-black py-2 sm:py-3 md:py-4 text-center">
+            <div ref={marqueeContainer} className="text-base sm:text-xl md:text-2xl lg:text-3xl flex whitespace-nowrap">
                 {marqueList.map((item, index) => (
-                    <span key={`first-${index}`} className="mx-4 flex items-center gap-4">
+                    <span key={`first-${index}`} className="mx-2 sm:mx-3 md:mx-4 flex items-center gap-2 sm:gap-3 md:gap-4">
                         {item.name}
                         {item.icon}
                     </span>
                 ))}
                 {marqueList.map((item, index) => (
-                    <span key={`second-${index}`} className="mx-4 flex items-center gap-4">
+                    <span key={`second-${index}`} className="mx-2 sm:mx-3 md:mx-4 flex items-center gap-2 sm:gap-3 md:gap-4">
                         {item.name}
                         {item.icon}
                     </span>

@@ -30,7 +30,7 @@ export default function LandingPage() {
       <div id="testimoni" className="pt-30">
         <Testimoni />
       </div>
-      <div id="contact" className="pt-30 pb-10">
+      <div id="contact" className="pt-30 pb-5 sm:pb-10 md:pb-10 lg:pb-10">
         <Footer />
       </div>
     </div>
