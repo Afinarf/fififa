@@ -1,17 +1,19 @@
 'use client'
-import About from "../components/about";
-import Hero from "../components/hero";
-import Navbar from "../components/navbar";
-import Portfolio from "../components/portfolio";
-import Services from "../components/services";
-import Testimoni from "../components/testimoni";
-import Footer from "../components/footer";
-import { ActiveSectionProvider } from "../components/activeSectionContext";
+import About from "../components/about"
+import Hero from "../components/hero"
+import Navbar from "../components/navbar"
+import Portfolio from "../components/portfolio"
+import Services from "../components/services"
+import Testimoni from "../components/testimoni"
+import Footer from "../components/footer"
+import { ActiveSectionProvider } from "../components/activeSectionContext"
+import { ReactLenis } from 'lenis/react'
 
 export default function LandingPage() {
   return (
+    <ReactLenis root>
     <ActiveSectionProvider>
-    <div className="bg-white">
+    <div className="">
       <div className="sticky top-0 z-50">
         <Navbar />
       </div>
@@ -35,5 +37,6 @@ export default function LandingPage() {
       </div>
     </div>
     </ActiveSectionProvider>
+    </ReactLenis>
   )
 }

@@ -1,12 +1,13 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Img from 'next/image'
-import { motion, useMotionValue, useMotionValueEvent } from 'framer-motion'
+import { motion, useMotionValue, useMotionValueEvent, animate } from 'framer-motion'
+import Text from './animation/text'
 
 export default function Testimoni() {
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [cardWidth, setCardWidth] = useState(555);
-    const x = useMotionValue(0);
+    const [isLoaded, setIsLoaded] = useState(false)
+    const [cardWidth, setCardWidth] = useState(555)
+    const x = useMotionValue(0)
 
     const uniqueTestimonials = [
         {
@@ -16,7 +17,7 @@ export default function Testimoni() {
         },
         {
             name: 'Aburizal Ahmad',
-            message: 'I was in a total panic just one day before the event until I stumbled upon this rental service. It was such a stress-free experience; the equipment was complete, the prices were competitive, and the service was impressively fast and friendly. Absolute lifesavers!',
+            message: 'I was in a total panic just one day before the event until I stumbled upon this rental service. It was such a stress-free experience the equipment was complete, the prices were competitive, and the service was impressively fast and friendly. Absolute lifesavers!',
             img: '/img/testimoni/avatar1.svg'
         },
         {
@@ -34,60 +35,72 @@ export default function Testimoni() {
             message: 'The equipment provided was top-notch, and the service was exceptional. Their professionalism and attention to detail made the event a success. I highly recommend them for their outstanding services.',
             img: '/img/testimoni/avatar5.svg'
         },
-    ];
+    ]
 
-    const testimonials = [...uniqueTestimonials, ...uniqueTestimonials];
+    const testimonials = [...uniqueTestimonials, ...uniqueTestimonials]
 
-    const ONE_SET_WIDTH = uniqueTestimonials.length * cardWidth;
+    const ONE_SET_WIDTH = uniqueTestimonials.length * cardWidth
 
     useEffect(() => {
-        setIsLoaded(true);
+        setIsLoaded(true)
         
-        // Update card width based on screen size
         const updateCardWidth = () => {
             if (window.innerWidth < 640) {
-                setCardWidth(window.innerWidth - 32); // Full width minus padding
+                setCardWidth(window.innerWidth - 32)
             } else if (window.innerWidth < 768) {
-                setCardWidth(400);
+                setCardWidth(400)
             } else if (window.innerWidth < 1024) {
-                setCardWidth(480);
+                setCardWidth(480)
             } else {
-                setCardWidth(555);
+                setCardWidth(555)
             }
-        };
+        }
 
-        updateCardWidth();
-        window.addEventListener('resize', updateCardWidth);
+        updateCardWidth()
+        window.addEventListener('resize', updateCardWidth)
         
-        return () => window.removeEventListener('resize', updateCardWidth);
-    }, []);
+        return () => window.removeEventListener('resize', updateCardWidth)
+    }, [])
 
     useMotionValueEvent(x, "change", (latest) => {
-        const xPos = latest;
+        const xPos = latest
         if (xPos <= -ONE_SET_WIDTH) {
-            x.set(xPos + ONE_SET_WIDTH);
+            x.set(xPos + ONE_SET_WIDTH)
         } 
         else if (xPos > 0) {
-            x.set(xPos - ONE_SET_WIDTH);
+            x.set(xPos - ONE_SET_WIDTH)
         }
-    });
+    })
 
     return (
         <section className="overflow-hidden">
             <div className="">
                 <div className='border-t border-neutral-500 pb-8 sm:pb-12 md:pb-16'/>
+                <Text>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black justify-center items-center text-center leading-tight">
                     Don&apos;t Just 
                     <br />
                     Take Our Words.
                 </h1>
+                </Text>
+                <Text>
                 <p className='text-center text-black text-sm sm:text-base md:text-lg pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-16 md:pb-18 px-4'>
                     Hear directly from satisfied clients who have trusted us with their meetings and events.
                 </p>
+                </Text>
             </div>
 
-            {/* TESTIMONI CAROUSEL */}
-            <div className={`cursor-grab active:cursor-grabbing overflow-hidden ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}>
+            <motion.div 
+                initial={{ opacity: 0, x: 100 }} 
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ amount: 0.2 }} 
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                onViewportLeave={() => {
+                    animate(x, 0, { duration: 0.5, ease: "easeInOut" })
+                }}
+                
+                className={`cursor-grab active:cursor-grabbing overflow-hidden`}
+            >
                 <motion.div 
                     style={{ x }} 
                     drag="x" 
@@ -121,7 +134,7 @@ export default function Testimoni() {
                     ))}
                     <div className='border-l border-neutral-500 h-[200px] sm:h-[220px] md:h-60 lg:h-60'></div>
                 </motion.div>
-            </div>
+            </motion.div>
         </section>
     )
 }

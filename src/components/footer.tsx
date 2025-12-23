@@ -5,9 +5,16 @@ import { ArrowBearRight } from './icons/outline'
 import Img from 'next/image'
 import Link from 'next/link'
 import { useActiveSection } from './activeSectionContext'
+import { usePathname, useRouter } from 'next/navigation'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default function Footer () {
-        const { setActiveSection } = useActiveSection();
+        const { setActiveSection } = useActiveSection()
+        const pathname = usePathname()
+        const router = useRouter()
+        const isHomePage = pathname === '/'
+
         const links = [
         { name: 'Home', path: '#home' },
         { name: 'About', path: '#about' },
@@ -15,10 +22,26 @@ export default function Footer () {
         { name: 'Services', path: '#services'},
         { name: 'Testimoni', path: '#testimoni' },
         { name: 'Contact', path: '#contact' },
-    ];
+    ]
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof links[0]) => {
+        if (!isHomePage) {
+            e.preventDefault()
+            sessionStorage.setItem('navTarget', link.path)
+            router.push('/')
+            return
+        }
+
+        e.preventDefault()
+        setActiveSection(link.name)
+        const element = document.querySelector(link.path)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
 
     return (
-        <footer className='bg-blue-100 h-auto min-h-[748px] sm:min-h-[748px] md:min-h-[614px] lg:h-[588px] mx-4 sm:mx-6 md:mx-8 lg:mx-10 rounded-2xl flex flex-col justify-end'>
+        <footer data-aos="flip-down" className='bg-blue-100 h-auto min-h-[748px] sm:min-h-[748px] md:min-h-[614px] lg:h-[588px] mx-4 sm:mx-6 md:mx-8 lg:mx-10 rounded-2xl flex flex-col justify-end'>
             <div className='px-4 sm:px-6 md:px-8 lg:px-4 pb-6 sm:pb-8 lg:pb-4'>
 
                 <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-0'>
@@ -72,15 +95,8 @@ export default function Footer () {
                             {links.map((link) => (
                                 <li key={link.name}>
                                     <Link 
-                                        href={link.path} 
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            setActiveSection(link.name);
-                                            const element = document.querySelector(link.path);
-                                            if (element) {
-                                                element.scrollIntoView({ behavior: 'smooth' });
-                                            }
-                                        }}
+                                        href={isHomePage ? link.path : '/'} 
+                                        onClick={(e) => handleNavClick(e, link)}
                                         className={`relative px-2 text-sm transition-colors flex items-center outline-none cursor-pointer text-black hover:text-blue-600`}>
                                         <span className="relative z-10 px-1 py-1">{link.name}</span>
                                     </Link>

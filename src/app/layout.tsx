@@ -19,10 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body 
-        className={`${poppinsSans.variable} antialiased bg-neutral-50`}
-        suppressHydrationWarning={true}
-      >
+      <body className={`${poppinsSans.variable} antialiased bg-neutral-50`} suppressHydrationWarning={true}>
         {children}
       </body>
     </html>

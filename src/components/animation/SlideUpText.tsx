@@ -1,12 +1,12 @@
-import React, { useRef, useLayoutEffect } from 'react';
-import gsap from 'gsap';
+import React, { useRef, useLayoutEffect } from 'react'
+import gsap from 'gsap'
 
 interface SlideUpTextProps {
-  children: React.ReactNode;
-  className?: string;
-  duration?: number;
-  delay?: number;
-  yOffset?: number;
+  children: React.ReactNode
+  className?: string
+  duration?: number
+  delay?: number
+  yOffset?: number
 }
 
 const SlideUpText: React.FC<SlideUpTextProps> = ({
@@ -16,7 +16,7 @@ const SlideUpText: React.FC<SlideUpTextProps> = ({
   delay = 0,
   yOffset = 30,
 }) => {
-  const componentRef = useRef<HTMLDivElement>(null);
+  const componentRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -30,17 +30,17 @@ const SlideUpText: React.FC<SlideUpTextProps> = ({
           delay: delay,
           ease: 'power3.out',
         }
-      );
-    }, componentRef);
+      )
+    }, componentRef)
 
-    return () => ctx.revert();
-  }, [duration, delay, yOffset]);
+    return () => ctx.revert()
+  }, [duration, delay, yOffset])
 
   return (
     <div ref={componentRef} className={className}>
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default SlideUpText;
+export default SlideUpText
