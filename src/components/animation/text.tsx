@@ -109,7 +109,7 @@ export default function Text({ children, animateOnScroll = true, delay = 0 }: Te
     )
 
     if (React.Children.count(children) === 1) {
-        return React.cloneElement(children, { ref: containRef })
+        return React.cloneElement(children as React.ReactElement<any>, { ref: containRef })
     }
 
     return (
