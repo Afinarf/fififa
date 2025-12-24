@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState, useRef } from 'react'
 import Button from './button'
 import { ArrowBearRight } from './icons/outline'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, MotionConfig } from 'framer-motion'
 import { useActiveSection } from './activeSectionContext'
 import TransitionLink from './animation/Transition'
 
@@ -17,6 +17,39 @@ const links = [
     { name: 'Testimoni', path: '#testimoni' },
     { name: 'Contact', path: '#contact' },
 ]
+
+const VARIANTS = {
+    top: {
+        open: {
+            rotate: ["0deg", "0deg", "45deg"],
+            top: ["35%", "50%", "50%"],
+        },
+        closed: {
+            rotate: ["45deg", "0deg", "0deg"],
+            top: ["50%", "50%", "35%"],
+        },
+    },
+    middle: {
+        open: {
+            rotate: ["0deg", "0deg", "-45deg"],
+        },
+        closed: {
+            rotate: ["-45deg", "0deg", "0deg"],
+        },
+    },
+    bottom: {
+        open: {
+            rotate: ["0deg", "0deg", "45deg"],
+            bottom: ["35%", "50%", "50%"],
+            left: "50%",
+        },
+        closed: {
+            rotate: ["45deg", "0deg", "0deg"],
+            bottom: ["50%", "50%", "35%"],
+            left: "50%",
+        },
+    },
+}
 
 export default function Navbar () {
     const { activeSection, setActiveSection } = useActiveSection()
@@ -30,17 +63,21 @@ export default function Navbar () {
     const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
 
     useEffect(() => {
+        const body = document.querySelector('body')
+        if (body?.classList.contains('page-transition')) {
+            body.classList.remove('page-transition')
+        }
+    }, [])
+
+    useEffect(() => {
         if (isHomePage) {
             const targetPath = sessionStorage.getItem('navTarget')
-            
             if (targetPath) {
                 const targetId = targetPath.replace('#', '')
                 const element = document.getElementById(targetId)
-                
                 if (element) {
                     const activeLink = links.find(l => l.path === targetPath)
                     if (activeLink) setActiveSection(activeLink.name)
-
                     setTimeout(() => {
                         element.scrollIntoView({ behavior: 'auto' }) 
                     }, 10)
@@ -54,7 +91,6 @@ export default function Navbar () {
 
     useEffect(() => {
         if (!isHomePage) return
-
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -67,17 +103,12 @@ export default function Navbar () {
                     }
                 })
             },
-            {
-                rootMargin: '-50% 0px -50% 0px',
-                threshold: 0,
-            }
+            { rootMargin: '-50% 0px -50% 0px', threshold: 0 }
         )
-
         links.forEach((link) => {
             const element = document.querySelector(link.path)
             if (element) observer.observe(element)
         })
-
         return () => observer.disconnect()
     }, [setActiveSection, isHomePage])
 
@@ -102,46 +133,35 @@ export default function Navbar () {
     }
 
     const handleNavClick = async (e: React.MouseEvent<HTMLAnchorElement>, link: typeof links[0]) => {
-        if (!isHomePage) {
-            e.preventDefault()
-            setIsMobileMenuOpen(false)
+        e.preventDefault()
 
+        if (!isHomePage) {
+            setIsMobileMenuOpen(false)
             sessionStorage.setItem('navTarget', link.path)
-            
             await handleTransition('/')
             return 
         }
 
-        e.preventDefault()
-        
         isManualScrolling.current = true
         setActiveSection(link.name)
         setIsMobileMenuOpen(false)
 
         const element = document.querySelector(link.path)
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' })
+            setTimeout(() => {
+                element.scrollIntoView({ behavior: 'smooth' })
+            }, 100)
         }
 
-        if (scrollTimeout.current) {
-            clearTimeout(scrollTimeout.current)
-        }
-
+        if (scrollTimeout.current) clearTimeout(scrollTimeout.current)
         scrollTimeout.current = setTimeout(() => {
             isManualScrolling.current = false
         }, 1000)
     }
 
-    const handleLogoClick = async () => {
-        if (!isHomePage) {
-            await handleTransition('/')
-        } else {
-            router.push('/')
-        }
-    }
-
     return (
-        <nav className="w-full bg-white sticky top-0 z-50">
+        // FIX: Changed 'sticky' to 'fixed' to prevent jumping when menu opens
+        <nav className="w-full bg-white fixed top-0 z-50">
             <div className='flex flex-col w-full'>
                 <div className='flex items-center justify-between py-3 sm:py-4 bg-white px-4 sm:px-6 md:px-8 lg:px-10'>
                     
@@ -158,7 +178,7 @@ export default function Navbar () {
                                 <li key={link.name}>
                                     <Link
                                         href={isHomePage ? link.path : '/'}
-                                        onClick={(e) => handleNavClick(e, link)}
+                                        onClick={(e) => { void handleNavClick(e, link) }}
                                         className={`
                                             relative px-2 text-sm font-medium transition-colors flex items-center outline-none cursor-pointer
                                             ${activeSection === link.name ? 'text-white' : 'text-neutral-500 hover:text-black'}
@@ -190,15 +210,49 @@ export default function Navbar () {
                                 <ArrowBearRight strokeWidth={2} className="w-4 h-4" />
                             </Button>
                         </div>
-                        <button
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
-                            aria-label="Toggle menu"
-                        >
-                            <motion.span animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }} className="w-6 h-0.5 bg-black block transition-all"/>
-                            <motion.span animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }} className="w-6 h-0.5 bg-black block transition-all"/>
-                            <motion.span animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }} className="w-6 h-0.5 bg-black block transition-all"/>
-                        </button>
+                        
+                        {/* ANIMATED HAMBURGER MENU */}
+                        <div className="lg:hidden flex items-center justify-center">
+                            <MotionConfig
+                                transition={{
+                                    duration: 0.5,
+                                    ease: "easeInOut",
+                                }}
+                            >
+                                <motion.button
+                                    initial={false}
+                                    animate={isMobileMenuOpen ? "open" : "closed"}
+                                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                    variants={{
+                                        open: { rotate: 90 },
+                                        closed: { rotate: 0 }
+                                    }}
+                                    className="relative h-12 w-12 rounded-full bg-white/0 transition-colors hover:bg-neutral-100"
+                                >
+                                    <motion.span
+                                        variants={VARIANTS.top}
+                                        className="absolute h-0.5 w-7 bg-black"
+                                        style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
+                                    />
+                                    <motion.span
+                                        variants={VARIANTS.middle}
+                                        className="absolute h-0.5 w-7 bg-black"
+                                        style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
+                                    />
+                                    <motion.span
+                                        variants={VARIANTS.bottom}
+                                        className="absolute h-0.5 w-7 bg-black"
+                                        style={{
+                                            x: "-50%",
+                                            y: "50%",
+                                            bottom: "35%",
+                                            left: "50%",
+                                        }}
+                                    />
+                                </motion.button>
+                            </MotionConfig>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -210,7 +264,7 @@ export default function Navbar () {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="lg:hidden bg-white overflow-hidden"
+                        className="lg:hidden bg-white overflow-hidden border-t border-neutral-100"
                     >
                         <ul className='flex flex-col py-4'>
                             {links.map((link, index) => (
@@ -222,10 +276,10 @@ export default function Navbar () {
                                 >
                                     <Link
                                         href={isHomePage ? link.path : '/'}
-                                        onClick={(e) => handleNavClick(e, link)}
+                                        onClick={(e) => { void handleNavClick(e, link) }}
                                         className={`
                                             block px-6 py-3 text-base font-medium transition-colors
-                                            ${activeSection === link.name ? 'bg-black text-white' : 'text-black hover:bg-neutral-200'}
+                                            ${activeSection === link.name ? 'bg-black text-white' : 'text-neutral-700 hover:bg-neutral-100'}
                                         `}
                                     >
                                         {link.name}

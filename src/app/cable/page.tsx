@@ -12,12 +12,11 @@ export default function Cable () {
     return (
         <ReactLenis root>
         <ActiveSectionProvider>
-            <div className="bg-white space-y-4 md:space-y-7 lg:space-y-9">
-                <div className="sticky top-0 z-50">
-                    <Navbar />
-                </div>
+            <div className="bg-white space-y-4 md:space-y-7 lg:space-y-9 pt-[74px] lg:pt-[102px]">
+                
+                <Navbar />
 
-                <div className="portfolio-top-border absolute top-0 left-0 w-full h-px bg-neutral-500" />
+                <div className="portfolio-top-border absolute left-0 w-full h-px bg-neutral-500" />
                 <div className="">
                     <div className='portfolio-item flex flex-col md:flex-row items-stretch md:items-stretch'>
                         
