@@ -15,23 +15,25 @@ export default function LandingPage() {
       <ActiveSectionProvider>
         <div className="bg-white pt-[88px]">
           <Navbar />
-          <div id="home" className="scroll-mt-28">
-            <Hero />
-          </div>
-          <div id="about" className="scroll-mt-34">
-            <About />
-          </div>
-          <div id="portfolio" className="pt-30">
-            <Portfolio />
-          </div>
-          <div id="services" className="pt-30">
-            <Services />
-          </div>
-          <div id="testimoni" className="pt-30">
-            <Testimoni />
-          </div>
-          <div id="contact" className="pt-30 pb-5 sm:pb-10 md:pb-10 lg:pb-10">
-            <Footer />
+          <div className="w-full overflow-x-hidden">
+            <div id="home" className="scroll-mt-28">
+              <Hero />
+            </div>
+            <div id="about" className="scroll-mt-34">
+              <About />
+            </div>
+            <div id="portfolio" className="pt-30">
+              <Portfolio />
+            </div>
+            <div id="services" className="pt-30">
+              <Services />
+            </div>
+            <div id="testimoni" className="pt-30">
+              <Testimoni />
+            </div>
+            <div id="contact" className="pt-30 pb-5 sm:pb-10 md:pb-10 lg:pb-10">
+              <Footer />
+            </div>
           </div>
         </div>
       </ActiveSectionProvider>
