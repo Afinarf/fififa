@@ -16,7 +16,7 @@ export default function Projector () {
                 
                 <Navbar />
 
-                <div className="w-full overflow-x-hidden">
+                <div className="w-full overflow-x-hidden space-y-6">
                     <div className="portfolio-top-border absolute left-0 w-full h-px bg-neutral-500" />
                 
                     <div className="">
