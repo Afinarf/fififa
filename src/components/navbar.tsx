@@ -227,7 +227,7 @@ export default function Navbar () {
                                         open: { rotate: 90 },
                                         closed: { rotate: 0 }
                                     }}
-                                    className="relative h-12 w-12 rounded-full bg-white/0 transition-colors hover:bg-neutral-100"
+                                    className="relative h-12 w-12 rounded-full bg-white/0 transition-colors"
                                 >
                                     <motion.span
                                         variants={VARIANTS.top}
