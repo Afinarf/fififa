@@ -35,7 +35,7 @@ export default function MicDelegates () {
                                 <div className="flex flex-col md:flex-row items-start justify-between w-full gap-3 md:gap-4 flex-1">
                                     <Text>
                                     <div className="border border-neutral-500 rounded-lg bg-white relative overflow-hidden w-full md:w-80 lg:w-90 md:h-[220px] lg:h-[246px] flex items-center justify-center p-2 shrink-0">
-                                        <Img src="/img/MicDelegates.svg" alt="MicDelegates" width={275} height={165} className="lg:w-[280px]"/>
+                                        <Img src="/img/micDelegates.svg" alt="MicDelegates" width={275} height={165} className="lg:w-[280px]"/>
                                     </div>
                                     </Text>
                                     <Text delay={0.5}>
