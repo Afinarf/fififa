@@ -10,14 +10,14 @@ export default function Marque() {
     const [iconSize, setIconSize] = useState('h-6 w-6')
     
     const marqueList = [
-        { name: '/ Time Savings', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
-        { name: '/ Cost Savings', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
-        { name: '/ Experienced', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
-        { name: '/ Efficient', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
-        { name: '/ Fast', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
-        { name: '/ Flawless', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
-        { name: '/ Reliable', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
-        { name: '/ Seamless', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />}
+        { name: '/ Hemat Waktu', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Hemat Biaya', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Berpengalaman', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Efisien', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Cepat', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Sempurna', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Terpercaya', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />},
+        { name: '/ Mulus', icon: <SquareRoundedPlus strokeWidth={2} className={iconSize} />}
     ]
 
     const marqueeContainer = useRef<HTMLDivElement>(null)

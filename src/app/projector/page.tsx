@@ -30,19 +30,20 @@ export default function Projector () {
                                     <h1 className="text-neutral-400 text-3xl sm:text-4xl md:text-5xl">01</h1>
                                     </Text>
                                     <Text delay={0.1}>
-                                    <h2 className="text-black text-xl sm:text-2xl md:text-3xl">Projector</h2>
+                                    <h2 className="text-black text-xl sm:text-2xl md:text-3xl">Proyektor</h2>
                                     </Text>
                                 </div>
                                 <div className="flex flex-col md:flex-row items-start justify-between w-full gap-3 md:gap-4 flex-1">
                                     <Text>
                                     <div className="border border-neutral-500 rounded-lg bg-white relative overflow-hidden w-full md:w-80 lg:w-90 md:h-[220px] lg:h-[246px] flex items-center justify-center p-2 shrink-0">
-                                        <Img src="/img/projector.svg" alt="Projector" width={330} height={165} className=""/>
+                                        <Img src="/img/projector.svg" alt="Proyektor" width={330} height={165} className=""/>
                                     </div>
                                     </Text>
                                     <Text delay={0.5}>
                                     <div className="w-full flex-1 space-y-2">
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">Vivid Clarity in Any Light. Elevate your presentation with top-tier Hitachi and Epson projectors. With 2500–3000 lumens of brightness and seamless connectivity, we guarantee sharp, high-contrast visuals for corporate meetings and events, even in brightly lit rooms.</p>
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">Stress-Free On-Site Service. We save you time by handling the delivery and professional installation ourselves. Our team manages the technical details while you focus on your event. Every unit is rigorously tested and maintained to ensure flawless performance every time you rent.</p>
+                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">
+                                            Visual Tajam & Jelas. Proyektor Hitachi & Epson (2500–3000 lumens) menjamin tampilan jernih dan kontras tinggi, bahkan di ruangan terang. Layanan Terima Beres. Hemat waktu dengan layanan antar-pasang profesional. Kami pastikan alat berfungsi sempurna, sehingga Anda bisa fokus penuh pada acara.
+                                        </p>
                                     </div>
                                     </Text>
                                 </div>

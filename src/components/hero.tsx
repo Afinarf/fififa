@@ -20,9 +20,9 @@ export default function Hero () {
                 <div className="mb-12 sm:mb-14 md:mb-16 lg:mb-34">
                     <Text delay={0.8}>
                         <h1 className="text-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl justify-center items-center text-center leading-tight">
-                            Your Reliable Partner for<br className="hidden sm:block" />
+                            Mitra Terpercaya Anda<br className="hidden sm:block" />
                             <span className="sm:hidden"> </span>
-                            Meeting & Event Solutions.
+                            Untuk Solusi Rapat & Acara.
                         </h1>
                     </Text>
                 </div>
@@ -36,10 +36,10 @@ export default function Hero () {
                 >
                     <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 justify-center">
                         <ButtonOutline href="/projector" className="text-sm sm:text-base md:text-lg">
-                            Projector
+                            Proyektor
                         </ButtonOutline>
                         <ButtonOutline href="/screen" className="text-sm sm:text-base md:text-lg">
-                            Screen
+                            Layar
                         </ButtonOutline>
                         <ButtonOutline href="/tv" className="text-sm sm:text-base md:text-lg">
                             TV
@@ -49,7 +49,7 @@ export default function Hero () {
                         </ButtonOutline>
 
                         <ButtonOutline href="/cable" className="text-sm sm:text-base md:text-lg">
-                            Cable
+                            Kabel
                         </ButtonOutline>
                         <ButtonOutline href="/mic-delegates" className="text-sm sm:text-base md:text-lg">
                             Mic Delegates

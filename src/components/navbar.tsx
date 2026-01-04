@@ -7,15 +7,14 @@ import Button from './button'
 import { ArrowBearRight } from './icons/outline'
 import { motion, AnimatePresence, MotionConfig } from 'framer-motion'
 import { useActiveSection } from './activeSectionContext'
-import TransitionLink from './animation/Transition'
 
 const links = [
-    { name: 'Home', path: '#home' },
-    { name: 'About', path: '#about' },
-    { name: 'Portfolio', path: '#portfolio' },
-    { name: 'Services', path: '#services'},
+    { name: 'Beranda', path: '#home' },
+    { name: 'Tentang', path: '#about' },
+    { name: 'Portofolio', path: '#portfolio' },
+    { name: 'Layanan', path: '#services'},
     { name: 'Testimoni', path: '#testimoni' },
-    { name: 'Contact', path: '#contact' },
+    { name: 'Kontak', path: '#contact' },
 ]
 
 const VARIANTS = {
@@ -85,7 +84,7 @@ export default function Navbar () {
                 sessionStorage.removeItem('navTarget')
             }
         } else {
-            setActiveSection('Services')
+            setActiveSection('Layanan') 
         }
     }, [isHomePage, setActiveSection])
 
@@ -132,6 +131,16 @@ export default function Navbar () {
         body?.classList.remove('page-transition')
     }
 
+    const handleRefresh = async () => {
+        const body = document.querySelector('body')
+        
+        body?.classList.add('page-transition')
+
+        await new Promise((resolve) => setTimeout(resolve, 500))
+        
+        window.location.href = '/'
+    }
+
     const handleNavClick = async (e: React.MouseEvent<HTMLAnchorElement>, link: typeof links[0]) => {
         e.preventDefault()
 
@@ -160,16 +169,15 @@ export default function Navbar () {
     }
 
     return (
-        // FIX: Changed 'sticky' to 'fixed' to prevent jumping when menu opens
         <nav className="w-full bg-white fixed top-0 z-50">
             <div className='flex flex-col w-full'>
                 <div className='flex items-center justify-between py-3 sm:py-4 bg-white px-4 sm:px-6 md:px-8 lg:px-10'>
                     
-                    <div className="flex items-center cursor-pointer">
-                        <TransitionLink href="/" className="flex items-center space-x-2 sm:space-x-4">
+                    <div className="flex items-center cursor-pointer" onClick={handleRefresh}>
+                        <div className="flex items-center space-x-2 sm:space-x-4">
                             <Img src="/img/logo.svg" alt="Logo" width={0} height={0} sizes="100vw" className='brightness-0 h-10 sm:h-12 md:h-14 lg:h-16 w-auto' />
                             <span className='text-xs sm:text-sm font-bold text-black tracking-wide hidden sm:block'>FIFIFA MULTIMEDIA</span>
-                        </TransitionLink>
+                        </div>
                     </div>
 
                     <div className='hidden lg:flex items-center justify-between space-x-6 xl:space-x-10'>
@@ -201,7 +209,7 @@ export default function Navbar () {
                     <div className="flex space-x-2 sm:space-x-4 items-center">
                         <div className='hidden sm:block'>
                             <Button className='flex items-center space-x-2 py-3' onClick={() => window.open('https://wa.me/6287717363285')}>
-                                <span className='text-sm font-semibold'>Make a Call</span>
+                                <span className='text-sm font-semibold'>Hubungi</span>
                                 <ArrowBearRight strokeWidth={2} />
                             </Button>
                         </div>
@@ -211,7 +219,6 @@ export default function Navbar () {
                             </Button>
                         </div>
                         
-                        {/* ANIMATED HAMBURGER MENU */}
                         <div className="lg:hidden flex items-center justify-center">
                             <MotionConfig
                                 transition={{
@@ -227,7 +234,7 @@ export default function Navbar () {
                                         open: { rotate: 90 },
                                         closed: { rotate: 0 }
                                     }}
-                                    className="relative h-12 w-12 rounded-full bg-white/0 transition-colors"
+                                    className="relative h-12 w-12 rounded-full bg-white/0 transition-colors hover:bg-neutral-100"
                                 >
                                     <motion.span
                                         variants={VARIANTS.top}

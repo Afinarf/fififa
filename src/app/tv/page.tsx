@@ -40,8 +40,9 @@ export default function TV () {
                                     </Text>
                                     <Text delay={0.5}>
                                     <div className="w-full flex-1 space-y-2">
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">Vibrant displays that capture attention. Available in 32&quot;, 45&quot;, and 50&quot; sizes, our LED TVs deliver sharp, high-definition visuals that bring your presentations and exhibitions to life. Whether it’s a professional showcase or a private event, these prime-condition units ensure your content stays bright and engaging from every angle.</p>
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">Flexible mounting and seamless service. Choose between mobile floor stands for flexibility or stage mounts to fit your venue perfectly. We provide full delivery and professional installation, taking care of the technical details so you can walk in and start your event with total confidence.</p>
+                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">
+                                            Visual Hidup & Memikat. Tersedia ukuran 32&quot;, 45&quot;, dan 50&quot;. TV LED kami menyajikan visual tajam beresolusi tinggi yang membuat presentasi dan pameran Anda terlihat cerah dari segala sudut. Fleksibel & Terima Beres. Pilih standing bracket atau pemasangan panggung. Kami tangani pengiriman dan instalasi profesional, memastikan teknis acara aman sehingga Anda bisa tampil percaya diri.
+                                        </p>
                                     </div>
                                     </Text>
                                 </div>

@@ -4,8 +4,8 @@ import { ActiveSectionProvider } from "../../components/activeSectionContext"
 import Navbar from "../../components/navbar"
 import Img from 'next/image'
 import Footer from "../../components/footer"
-import ServicesCard from "@/src/components/servicesCard"
-import { ReactLenis } from 'lenis/react'
+import ServicesCard from "../../components/servicesCard"
+import { ReactLenis } from 'lenis/react';
 import Text from "../../components/animation/text"
 
 export default function Interpreter () {
@@ -26,7 +26,7 @@ export default function Interpreter () {
                             <div className="flex flex-col p-4 sm:p-6 md:p-4 border-b border-t md:border-l md:border-r border-neutral-500 w-full md:w-[670px] lg:w-[900px] h-auto md:shrink-0 gap-3 md:gap-4">
                                 <div className="flex flex-row items-end gap-2 md:gap-3">
                                     <Text>
-                                    <h1 className="text-neutral-400 text-3xl sm:text-4xl md:text-5xl">05</h1>
+                                    <h1 className="text-neutral-400 text-3xl sm:text-4xl md:text-5xl">07</h1>
                                     </Text>
                                     <Text delay={0.1}>
                                     <h2 className="text-black text-xl sm:text-2xl md:text-3xl">Interpreter</h2>
@@ -35,13 +35,14 @@ export default function Interpreter () {
                                 <div className="flex flex-col md:flex-row items-start justify-between w-full gap-3 md:gap-4 flex-1">
                                     <Text>
                                     <div className="border border-neutral-500 rounded-lg bg-white relative overflow-hidden w-full md:w-80 lg:w-90 md:h-[220px] lg:h-[246px] flex items-center justify-center p-2 shrink-0">
-                                        <Img src="/img/interpreter.svg" alt="Interpreter" width={360} height={165} className="lg:w-[400px]"/>
+                                        <Img src="/img/interpreter.svg" alt="Penerjemah" width={360} height={165} className="lg:w-[400px]"/>
                                     </div>
                                     </Text>
                                     <Text delay={0.5}>
                                     <div className="w-full flex-1 space-y-2">
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">Break language barriers in real-time. Ensure every attendee follows the conversation perfectly with our simultaneous interpretation systems. Delivering crystal-clear audio in the participant&apos;s language of choice, this technology is the essential tool for creating inclusive, professional, and successful international conferences.</p>
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">Clear communication, even on the move. For events outside the ballroom, our portable Tour Guide Systems (TGS) provide a lightweight, high-fidelity solution for factory visits, tours, or mobile interpretation. We handle the technical configuration and on-site support, ensuring your message is heard clearly in any environment.</p>
+                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">
+                                            Terjemahan Real-Time. Hapus kendala bahasa dengan sistem simultan kami. Audio jernih menjamin konferensi internasional yang inklusif dan sukses. Solusi Mobile & Portabel. Sistem Tour Guide (TGS) ringan untuk tur atau kunjungan pabrik. Dukungan teknis penuh memastikan suara terdengar jelas di segala lokasi.
+                                        </p>
                                     </div>    
                                     </Text>
                                 </div>

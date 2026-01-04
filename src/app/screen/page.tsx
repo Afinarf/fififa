@@ -29,19 +29,20 @@ export default function Screen () {
                                     <h1 className="text-neutral-400 text-3xl sm:text-4xl md:text-5xl">02</h1>
                                     </Text>
                                     <Text delay={0.1}>
-                                    <h2 className="text-black text-xl sm:text-2xl md:text-3xl">Screen</h2>
+                                    <h2 className="text-black text-xl sm:text-2xl md:text-3xl">Layar</h2>
                                     </Text>
                                 </div>
                                 <div className="flex flex-col md:flex-row items-start justify-between w-full gap-3 md:gap-4 flex-1">
                                     <Text>
                                     <div className="border border-neutral-500 rounded-lg bg-white relative overflow-hidden w-full md:w-80 lg:w-90 md:h-[220px] lg:h-[246px] flex items-center justify-center p-2 shrink-0">
-                                        <Img src="/img/screen.svg" alt="Screen" width={220} height={165} className=""/>
+                                        <Img src="/img/screen.svg" alt="Layar" width={220} height={165} className=""/>
                                     </div>
                                     </Text>
                                     <Text delay={0.5}>
                                     <div className="w-full flex-1 space-y-2">
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">The perfect backdrop for every detail. Our 2x2m screens feature a specialized high-reflectivity surface designed to capture and reflect light with maximum clarity. Perfectly sized for seminars or office meetings, they provide a professional, high-contrast display that makes your content easy to read from any seat in the room.</p>
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">Hassle-free setup, every time. We handle the heavy lifting with prompt delivery and expert on-site installation. Our screens are sturdy, meticulously maintained, and ready for use in minutes—ensuring your event stays on schedule while we manage the technical foundation.</p>
+                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">
+                                            Visual Jernih & Profesional. Layar 2x2m dengan reflektivitas tinggi menjamin tampilan kontras yang mudah dibaca dari setiap sudut ruangan. Praktis & Bebas Repot. Kami tangani pengiriman dan pemasangan instan. Layar kokoh dan terawat, siap pakai dalam hitungan menit agar acara Anda tepat waktu.
+                                        </p>
                                     </div>
                                     </Text>
                                 </div>

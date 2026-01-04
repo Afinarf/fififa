@@ -12,11 +12,11 @@ export default function ServicesCard() {
     const router = useRouter()
     
     const services = [
-        { id: "01", title: "Projector", image: "/img/projector.svg", path: "/projector" },
-        { id: "02", title: "Screen", image: "/img/screen.svg", path: "/screen" },
+        { id: "01", title: "Proyektor", image: "/img/projector.svg", path: "/projector" },
+        { id: "02", title: "Layar", image: "/img/screen.svg", path: "/screen" },
         { id: "03", title: "TV", image: "/img/tv.svg", path: "/tv" },
         { id: "04", title: "Laptop", image: "/img/laptop.svg", path: "/laptop" },
-        { id: "05", title: "Cable", image: "/img/cable.svg", path: "/cable" },
+        { id: "05", title: "Kabel", image: "/img/cable.svg", path: "/cable" },
         { id: "06", title: "Mic Delegates", image: "/img/micdelegates.svg", path: "/mic-delegates" },
         { id: "07", title: "Interpreter", image: "/img/interpreter.svg", path: "/interpreter" },
     ]
@@ -106,7 +106,7 @@ export default function ServicesCard() {
                                         className='flex items-center justify-center gap-2 cursor-pointer' 
                                         href={service.path}
                                     >
-                                        <span className='text-xs lg:text-sm font-medium'>See Details</span>
+                                        <span className='text-xs lg:text-sm font-medium'>Lihat Detail</span>
                                     </ButtonOutline>
                                 </div>
                             </div>
@@ -150,7 +150,7 @@ export default function ServicesCard() {
                                     className='flex items-center justify-center gap-2 cursor-pointer w-full'
                                     href={service.path}
                                 >
-                                    <span className='text-sm font-medium'>See Details</span>
+                                    <span className='text-sm font-medium'>Lihat Detail</span>
                                 </ButtonOutline>
                             </div>
                         </div>

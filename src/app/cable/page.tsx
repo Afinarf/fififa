@@ -29,20 +29,21 @@ export default function Cable () {
                                     <h1 className="text-neutral-400 text-3xl sm:text-4xl md:text-5xl">05</h1>
                                     </Text>
                                     <Text delay={0.1}>
-                                    <h2 className="text-black text-xl sm:text-2xl md:text-3xl">Cable</h2>
+                                    <h2 className="text-black text-xl sm:text-2xl md:text-3xl">Kabel</h2>
                                     </Text>
                                 </div>
 
                                 <div className="flex flex-col md:flex-row items-start justify-between w-full gap-3 md:gap-4 flex-1">
                                     <Text>
                                     <div className="border border-neutral-500 rounded-lg bg-white relative overflow-hidden w-full md:w-80 lg:w-90 md:h-[220px] lg:h-[246px] flex items-center justify-center p-2 shrink-0">
-                                        <Img src="/img/cable.svg" alt="Cable" width={220} height={165} className="lg:w-[200px]"/>
+                                        <Img src="/img/cable.svg" alt="Kabel" width={220} height={165} className="lg:w-[200px]"/>
                                     </div>
                                     </Text>
                                     <Text delay={0.5}>
                                     <div className="w-full flex-1 space-y-2">
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">The reliable foundation for your setup. Keep your event connected with our premium range of HDMI, VGA, and power cables in lengths up to 30 meters. Our wide inventory offers the flexibility to arrange your equipment exactly where you need it, ensuring your technical setup is never limited by the size of the room.</p>
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">Flawless signal and a professional look. We only provide tested, high-grade cables to ensure a stable signal and a tidy, trip-free installation. Our team helps you maintain an organized workspace, ensuring your technical foundation is as clean and professional as your presentation.</p>
+                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">
+                                            Fondasi Kuat & Fleksibel. Jaga koneksi acara dengan kabel HDMI, VGA, dan daya premium hingga 30 meter. Atur posisi peralatan dengan bebas tanpa terhalang ukuran ruangan. Sinyal Stabil, Tampilan Rapi. Kabel teruji menjamin sinyal mulus dan instalasi bersih. Tim kami memastikan pengaturan kabel tertata profesional agar area presentasi tetap rapi.
+                                        </p>
                                     </div>
                                     </Text>
                                 </div>

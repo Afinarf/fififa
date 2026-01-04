@@ -4,8 +4,8 @@ import { ActiveSectionProvider } from "../../components/activeSectionContext"
 import Navbar from "../../components/navbar"
 import Img from 'next/image'
 import Footer from "../../components/footer"
-import ServicesCard from "@/src/components/servicesCard"
-import { ReactLenis } from 'lenis/react'
+import ServicesCard from "../../components/servicesCard"
+import { ReactLenis } from 'lenis/react';
 import Text from "../../components/animation/text"
 
 export default function Laptop () {
@@ -40,8 +40,9 @@ export default function Laptop () {
                                     </Text>
                                     <Text delay={0.5}>
                                     <div className="w-full flex-1 space-y-2">
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">Ready-to-use tech for large-scale projects. From corporate training sessions to recruitment exams, our high-performance laptops are optimized for stability and mass deployment. Every unit comes pre-loaded with your required software and is rigorously tested to ensure it performs perfectly under heavy workloads.</p>
-                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">End-to-end technical reliability. We don&apos;t just drop off equipment; we manage the configuration and network setup for you. With our professional technicians available to stay on-site at your venue, you get responsive support that ensures your large-scale IT operations run without a single glitch.</p>
+                                        <p className="text-black text-sm md:sm lg:text-sm leading-relaxed">
+                                            Siap untuk Skala Besar. Laptop performa tinggi yang stabil untuk pelatihan atau ujian massal. Unit teruji ketat dan siap pakai dengan perangkat lunak yang dibutuhkan. Dukungan Teknis Menyeluruh. Kami atur konfigurasi dan jaringan, bukan sekadar sewa. Teknisi siap sedia di lokasi untuk menjamin operasional IT berjalan mulus tanpa kendala.
+                                        </p>
                                     </div>
                                     </Text>
                                 </div>

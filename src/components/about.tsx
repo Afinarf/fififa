@@ -11,9 +11,9 @@ export default function About () {
             <div className='px-4 sm:px-6 md:px-8 lg:px-10'>
                 <Text>
                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
-                    Delivering Professional <br />
+                    Menghadirkan Kualitas Dan <br />
                     <div className='flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-3 mt-2 sm:mt-0'>
-                        <h1 className="whitespace-nowrap sm:whitespace-normal">Quality and Support That Is</h1>
+                        <h1 className="whitespace-nowrap sm:whitespace-normal">Dukungan Profesional Yang</h1>
                         <div className="w-36 sm:w-40 md:w-44 lg:w-48 text-center sm:text-left whitespace-nowrap">
                             <TypeWritter />
                         </div>
@@ -25,7 +25,7 @@ export default function About () {
             <div className='px-4 sm:px-8 md:px-16 lg:px-32 xl:px-60 py-6 sm:py-8 md:py-12 lg:py-18'>
                 <Text delay={0.2}>
                     <p className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm md:text-base text-black leading-relaxed">
-                        With over 5 years of experience, we assist diverse industries in delivering memorable meetings and events. We go far beyond simple equipment rental by delivering comprehensive technical solutions that seamlessly cover advanced multimedia, meeting essentials, and integrated IT support. Our expert team adapts to your unique needs, guaranteeing flawless technical execution and giving you the peace of mind to focus entirely on your event&apos;s goals.
+                        Berbekal pengalaman lebih dari 5 tahun, kami telah menjadi mitra terpercaya berbagai industri dalam menciptakan acara yang berkesan. Kami hadir lebih dari sekadar penyedia sewa peralatan; kami menawarkan solusi teknis menyeluruh yang mencakup multimedia canggih, perlengkapan rapat, dan dukungan IT terintegrasi. Tim ahli kami memastikan eksekusi teknis yang sempurna, memberikan Anda ketenangan untuk fokus sepenuhnya pada kesuksesan acara Anda.
                     </p>
                 </Text>
             </div>

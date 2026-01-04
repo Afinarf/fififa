@@ -6,7 +6,7 @@ export default function TypeWritter() {
         <div>
             <Typewriter
             options={{
-                strings: ['Fast.', 'Flawless.', 'Reliable.', 'Seemless.', 'Time Savings.', 'Cost Savings.', 'Experienced.', 'Efficient.'],
+                strings: ['Hemat.', 'Berpengalaman.', 'Efisien.', 'Cepat.', 'Sempurna.', 'Terpercaya.', 'Mulus.'],
                 autoStart: true,
                 loop: true,
                 delay: 80,

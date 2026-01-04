@@ -16,12 +16,12 @@ export default function Footer () {
         const isHomePage = pathname === '/'
 
         const links = [
-        { name: 'Home', path: '#home' },
-        { name: 'About', path: '#about' },
-        { name: 'Portfolio', path: '#portfolio' },
-        { name: 'Services', path: '#services'},
+        { name: 'Beranda', path: '#home' },
+        { name: 'Tentang', path: '#about' },
+        { name: 'Portofolio', path: '#portfolio' },
+        { name: 'Layanan', path: '#services'},
         { name: 'Testimoni', path: '#testimoni' },
-        { name: 'Contact', path: '#contact' },
+        { name: 'Kontak', path: '#contact' },
     ]
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: typeof links[0]) => {
@@ -47,30 +47,30 @@ export default function Footer () {
                 <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 lg:gap-0'>
                     {/*HEADER FOOTER  */}
                     <div className='space-y-4 sm:space-y-6 w-full lg:w-10/14'>
-                        <div>
+                        <div className='flex flex-row gap-2'>
                             <span className='text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-neutral-500'>
-                                Let&#39;s <b className='text-black text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium'>discuss</b> your
+                                Mari
                             </span>
+                            <Button className='flex items-center space-x-1 sm:space-x-2 py-2 px-3 sm:py-3 sm:px-4 md:py-4' onClick={() => window.open('https://wa.me/6287717363285')}>
+                                <span className='text-sm sm:text-lg md:text-xl lg:text-2xl font-semibold whitespace-nowrap'>Diskusikan</span>
+                                <ArrowBearRight strokeWidth={2} className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />
+                            </Button>
                         </div>
                         <div className='flex flex-row items-center flex-wrap gap-2 sm:gap-3 md:gap-4'>
-                            <span className='text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-neutral-500 whitespace-nowrap'>needs</span>
-                            <Button className='flex items-center space-x-1 sm:space-x-2 py-2 px-3 sm:py-3 sm:px-4 md:py-4' onClick={() => window.open('https://wa.me/6287717363285')}>
-                                <span className='text-sm sm:text-lg md:text-xl lg:text-2xl font-semibold whitespace-nowrap'>Let&#39;s Talk</span>
-                                <ArrowBearRight strokeWidth={2} className="w-5 h-5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
-                            </Button>
                             <span>
-                                <b className='text-black text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium whitespace-nowrap'>with us</b>
+                                <b className='text-black text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium whitespace-nowrap'>Kebutuhan</b>
                             </span>
+                            <span className='text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-neutral-500 whitespace-nowrap'>Anda</span>
                         </div> 
                     </div>
 
                     {/* CONTACT INFORMATION */}
                     <div className='flex flex-col justify-end w-full lg:w-4/14 text-left lg:text-right space-y-1 sm:space-y-2'>
                         <p className='text-black text-sm sm:text-base'>
-                            Bogor City,<br />
+                            Kota Bogor,<br />
                             Tanah Sareal,<br />
                             16169,<br />
-                            West Java,<br />
+                            Jawa Barat,<br />
                             Indonesia
                         </p>
                         <p className='text-black text-sm sm:text-base font-medium'>+62 877-1736-3285</p>
@@ -107,7 +107,7 @@ export default function Footer () {
 
                     {/* COPYRIGHT */}
                     <div className='w-full lg:w-auto'>
-                        <p className='text-black text-xs sm:text-sm text-left lg:text-right'>©FIFIFA MULTIMEDIA 2025. All rights reserved.</p>
+                        <p className='text-black text-xs sm:text-sm text-left lg:text-right'>©FIFIFA MULTIMEDIA 2025. Hak cipta dilindungi undang-undang.</p>
                     </div>
                 </div>
             </div>

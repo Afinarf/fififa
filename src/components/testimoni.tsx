@@ -12,27 +12,27 @@ export default function Testimoni() {
     const uniqueTestimonials = [
         {
             name: 'Sarah Wijaya Kusuma',
-            message: 'The equipment quality exceeded our expectations. Everything we rented, including the projectors, TVs, and screens, was in pristine condition and worked flawlessly. It\'s rare to find rental gear that is this well-maintained and reliable.',
+            message: 'Kualitas peralatan melebihi ekspektasi kami. Semua yang kami sewa, termasuk proyektor, TV, dan layar, dalam kondisi sangat baik dan berfungsi dengan sempurna. Jarang menemukan peralatan sewa yang terawat dan andal seperti ini.',
             img: '/img/testimoni/avatar2.svg'
         },
         {
             name: 'Aburizal Ahmad',
-            message: 'I was in a total panic just one day before the event until I stumbled upon this rental service. It was such a stress-free experience the equipment was complete, the prices were competitive, and the service was impressively fast and friendly. Absolute lifesavers!',
+            message: 'Saya sangat panik hanya sehari sebelum acara sampai saya menemukan layanan sewa ini. Pengalamannya sangat bebas stres, peralatannya lengkap, harganya kompetitif, dan layanannya sangat cepat dan ramah. Benar-benar penyelamat!',
             img: '/img/testimoni/avatar1.svg'
         },
         {
             name: 'Randy Pratama',
-            message: 'They offer exceptional quality work at very competitive prices, which is hard to find these days. The team is incredibly experienced and proactive, consistently providing the best solutions for even our most complex technical setups.',
+            message: 'Mereka menawarkan kualitas kerja yang luar biasa dengan harga yang sangat kompetitif, yang sulit ditemukan saat ini. Timnya sangat berpengalaman dan proaktif, selalu memberikan solusi terbaik bahkan untuk pengaturan teknis kami yang paling kompleks.',
             img: '/img/testimoni/avatar3.svg'
         },
         {
             name: 'Yudha Dwi P',
-            message: 'Exceptional service at a competitive price. The ordering process was seamless and incredibly user-friendly. I highly recommend their services for their reliability and professional standards.',
+            message: 'Layanan luar biasa dengan harga kompetitif. Proses pemesanan sangat lancar dan sangat mudah digunakan. Saya sangat merekomendasikan layanan mereka karena keandalan dan standar profesionalnya.',
             img: '/img/testimoni/avatar4.svg'
         },
         {
             name: 'Santoso',
-            message: 'The equipment provided was top-notch, and the service was exceptional. Their professionalism and attention to detail made the event a success. I highly recommend them for their outstanding services.',
+            message: 'Peralatan yang disediakan sangat berkualitas, dan layanannya luar biasa. Profesionalisme dan perhatian terhadap detail mereka membuat acara sukses. Saya sangat merekomendasikan mereka atas layanan luar biasa mereka.',
             img: '/img/testimoni/avatar5.svg'
         },
     ]
@@ -78,14 +78,14 @@ export default function Testimoni() {
                 <div className='border-t border-neutral-500 pb-8 sm:pb-12 md:pb-16'/>
                 <Text>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black justify-center items-center text-center leading-tight">
-                    Don&apos;t Just 
+                    Jangan Hanya 
                     <br />
-                    Take Our Words.
+                    Percaya Kata Kami.
                 </h1>
                 </Text>
                 <Text>
                 <p className='text-center text-black text-sm sm:text-base md:text-lg pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-16 md:pb-18 px-4'>
-                    Hear directly from satisfied clients who have trusted us with their meetings and events.
+                    Dengar langsung dari klien puas yang telah mempercayakan rapat dan acara mereka kepada kami.
                 </p>
                 </Text>
             </div>
