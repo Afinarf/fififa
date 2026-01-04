@@ -286,7 +286,7 @@ export default function Navbar () {
                                         onClick={(e) => { void handleNavClick(e, link) }}
                                         className={`
                                             block px-6 py-3 text-base font-medium transition-colors
-                                            ${activeSection === link.name ? 'bg-black text-white' : 'text-neutral-700 hover:bg-neutral-100'}
+                                            ${activeSection === link.name ? 'bg-black text-white' : 'text-neutral-700'}
                                         `}
                                     >
                                         {link.name}

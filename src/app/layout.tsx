@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   title: "FIFIFA Multimedia",
   keywords: ["Sewa Proyektor", "Sewa TV", "Sewa Bogor"],
   openGraph: {
-    title: 'FIFIFA Multimedia | Sewa Alat Meeting Bogor  ',
-    description: 'Sewa Proyektor, TV, Screen, Laptop, Interpreter, Kabel Bogor',
+    title: 'FIFIFA Multimedia | Sewa Alat Meeting Profesional Bogor',
+    description: 'FIFIFA Multimedia adalah penyedia jasa sewa peralatan meeting dan acara profesional di Bogor. Kami menyewakan Proyektor, TV, Screen, Laptop, Mic Delegasi, dan Sistem Interpreter dengan dukungan teknis berpengalaman lebih dari 5 tahun untuk menjamin kesuksesan acara Anda.',
     url: 'https://fififa-multimedia.com',
     siteName: 'FIFIFA Multimedia',
     images: [

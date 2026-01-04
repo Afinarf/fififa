@@ -16,7 +16,7 @@ export default function LandingPage() {
     '@type': 'LocalBusiness',
     name: 'FIFIFA Multimedia',
     image: 'https://fififa-multimedia.com/logo.svg',
-    description: 'Penyedia jasa sewa proyektor, TV, screen, dan peralatan meeting profesional di Bogor',
+    description: 'Sewa Proyektor, TV, Laptop & Alat Meeting Profesional di Bogor.',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Jalan Anggrek 2',
