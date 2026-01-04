@@ -234,7 +234,7 @@ export default function Navbar () {
                                         open: { rotate: 90 },
                                         closed: { rotate: 0 }
                                     }}
-                                    className="relative h-12 w-12 rounded-full bg-white/0 transition-colors hover:bg-neutral-100"
+                                    className="relative h-12 w-12 rounded-full bg-white/0 transition-colors"
                                 >
                                     <motion.span
                                         variants={VARIANTS.top}
@@ -286,7 +286,7 @@ export default function Navbar () {
                                         onClick={(e) => { void handleNavClick(e, link) }}
                                         className={`
                                             block px-6 py-3 text-base font-medium transition-colors
-                                            ${activeSection === link.name ? 'bg-black text-white' : 'text-neutral-700'}
+                                            ${activeSection === link.name ? 'bg-black text-white' : 'text-neutral-700 hover:bg-neutral-100'}
                                         `}
                                     >
                                         {link.name}
